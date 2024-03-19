@@ -279,7 +279,7 @@ public:
         int InputModel;
         int InputContinuare;
         int IndexBanca;
-        float PretInitial;
+        float PretInitial = 0;
         float RataLunara;
         string MarcaAleasa;
         string ModelAles;
