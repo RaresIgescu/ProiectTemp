@@ -19,12 +19,7 @@ public:
 
     Masina& operator=(const Masina& car1)= default;
 
-    Masina(const Masina& car) {  //consructor de copiere
-        Marca = car.Marca;
-        Model = car.Model;
-        Pret = car.Pret;
-        An = car.An;
-    }
+    Masina(const Masina& car): Marca(car.Marca), Model(car.Model), Pret(car.Pret), An(car.An){}
 
     ~Masina ()=default;
 
@@ -283,8 +278,6 @@ public:
 
     void Cumpara() {
         int functionare = 1;
-        int NrMarca;
-        int NrModel;
         int NrBanca;
         int InputMarca;
         int InputModel;
@@ -297,8 +290,8 @@ public:
         string BancaAleasa;
         while (functionare)
         {
-            NrMarca = 0;
-            NrModel = 0;
+            int NrMarca = 0;
+            int NrModel = 0;
             cout << "Alegeti mai intai marca automobilului dumneavoastra!" << "\n";
             for (int i = 0 ; i < Flota.size(); i++)
                 if(Flota[i].GetMarca() != Flota[i-1].GetMarca())
