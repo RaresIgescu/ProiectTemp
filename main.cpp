@@ -78,7 +78,7 @@ private:
     vector <int> NumarRate;
 
 public:
-    Banca(const string& nume, float tva,const vector <int> rate): Nume(nume), TVA(tva), NumarRate(rate) {}
+    Banca(const string& nume, float tva,const vector <int>& rate): Nume(nume), TVA(tva), NumarRate(rate) {}
 
     string GetNume() {
         return Nume;
