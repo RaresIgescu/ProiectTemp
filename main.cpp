@@ -78,11 +78,7 @@ private:
     vector <int> NumarRate;
 
 public:
-    Banca(string nume, float tva, vector <int> rate) {
-        Nume = std::move(nume);
-        TVA = tva;
-        NumarRate = std::move(rate);
-    }
+    Banca(string nume, float tva, vector <int> rate): Nume(nume), TVA(tva), NumarRate(rate) {}
 
     string GetNume() {
         return Nume;
