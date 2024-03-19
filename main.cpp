@@ -289,7 +289,7 @@ public:
             int NrMarca = 0;
             int NrModel = 0;
             cout << "Alegeti mai intai marca automobilului dumneavoastra!" << "\n";
-            for (int i = 0 ; i < Flota.size(); i++)
+            for (long unsigned int i = 0 ; i < Flota.size(); i++)
                 if(Flota[i].GetMarca() != Flota[i-1].GetMarca())
                     cout << ++NrMarca << "." << Flota[i].GetMarca() << "\n";
             cout << "Va rugam alegeti numarul corespunzator marcii dorite:" << "\n";
@@ -298,7 +298,7 @@ public:
             {
                 NrMarca = 0;
                 cout << "Nu ati ales corect, reincercati!" << "\n";
-                for (int i = 0 ; i < Flota.size(); i++)
+                for (long unsigned int i = 0 ; i < Flota.size(); i++)
                     if(Flota[i].GetMarca() != Flota[i-1].GetMarca())
                         cout << ++NrMarca << "." << Flota[i].GetMarca() << "\n";
                 cin >> InputMarca;
@@ -314,7 +314,7 @@ public:
             while(InputModel<1 || InputModel > 3)
             {
                 cout << "Nu ati ales corect, reincercati!" << "\n";
-                for (int i = 0 ; i < Flota.size(); i++)
+                for (long unsigned int i = 0 ; i < Flota.size(); i++)
                     if(Flota[i].GetMarca() != Flota[i-1].GetMarca())
                         cout << ++NrMarca << "." << Flota[i].GetMarca() << "\n";
                 cin >> InputModel;
@@ -467,7 +467,7 @@ public:
     }
 
     void VizualizareFlota() {
-        for(int i = 0; i < Flota.size(); i+=3)
+        for(long unsigned int i = 0; i < Flota.size(); i+=3)
         {
             int NrModel = 0;
             cout <<"Gama masinilor de la " << Flota[i].GetMarca() << ":\n";
