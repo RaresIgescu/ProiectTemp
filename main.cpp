@@ -13,26 +13,9 @@ private:
     int An;
 
 public:
-    Masina(){
-        Marca = "";
-        Model = "";
-        Pret = 0;
-        An = 0;
-    }
+    explicit Masina(string marca = "", string model = "", float pret = 0, int an = 0): Marca(std::move(marca)), Model(std::move(model)), Pret(pret), An(an) {}
 
-    Masina(string marca, string model, float pret, int an){ //masina nu este noua, punem datele corespunzatorare
-        Marca = std::move(marca);
-        Model = std::move(model);
-        Pret = pret;
-        An = an;
-    }
-
-    Masina(string marca, string model, float pret) { //cand masine este noua, putem da doar marca si modelul, anul fiind 2024
-        Marca = std::move(marca);
-        Model = std::move(model);
-        Pret = pret;
-        An = 2024;
-    }
+    Masina(string& marca, string& model, float pret): Marca(marca), Model(model), Pret(pret), An(2024) {}
 
     Masina& operator=(const Masina& car1)= default;
 
@@ -45,7 +28,7 @@ public:
 
     ~Masina ()=default;
 
-    int operator==(Masina& car){
+    int operator==(const Masina& car){
         return car.Marca == Marca and car.Model == Model and car.An == An;
     }
 
