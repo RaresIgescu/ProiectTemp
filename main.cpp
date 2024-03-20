@@ -289,18 +289,18 @@ public:
             int NrMarca = 0;
             int NrModel = 0;
             cout << "Alegeti mai intai marca automobilului dumneavoastra!" << "\n";
-            for (long unsigned int i = 0 ; i < Flota.size(); i++)
+            for (long unsigned int i = 1 ; i <= Flota.size(); i++)
                 if(Flota[i].GetMarca() != Flota[i-1].GetMarca())
-                    cout << ++NrMarca << "." << Flota[i].GetMarca() << "\n";
+                    cout << ++NrMarca << "." << Flota[i-1].GetMarca() << "\n";
             cout << "Va rugam alegeti numarul corespunzator marcii dorite:" << "\n";
             cin >> InputMarca;
             while(InputMarca < 1 || InputMarca > 6)
             {
                 NrMarca = 0;
                 cout << "Nu ati ales corect, reincercati!" << "\n";
-                for (long unsigned int i = 0 ; i < Flota.size(); i++)
+                for (long unsigned int i = 1 ; i <= Flota.size(); i++)
                     if(Flota[i].GetMarca() != Flota[i-1].GetMarca())
-                        cout << ++NrMarca << "." << Flota[i].GetMarca() << "\n";
+                        cout << ++NrMarca << "." << Flota[i-1].GetMarca() << "\n";
                 cin >> InputMarca;
             }
             MarcaAleasa = Flota[3 * (InputMarca - 1)].GetMarca();
@@ -314,9 +314,9 @@ public:
             while(InputModel<1 || InputModel > 3)
             {
                 cout << "Nu ati ales corect, reincercati!" << "\n";
-                for (long unsigned int i = 0 ; i < Flota.size(); i++)
+                for (long unsigned int i = 1 ; i <= Flota.size(); i++)
                     if(Flota[i].GetMarca() != Flota[i-1].GetMarca())
-                        cout << ++NrMarca << "." << Flota[i].GetMarca() << "\n";
+                        cout << ++NrMarca << "." << Flota[i-1].GetMarca() << "\n";
                 cin >> InputModel;
             }
             ModelAles = Flota[3 * (InputMarca - 1) + (InputModel - 1)].GetModel();
@@ -464,6 +464,7 @@ public:
                     functionare = 0;
             }
         }
+        return;
     }
 
     void VizualizareFlota() {
@@ -478,7 +479,7 @@ public:
         }
     }
 
-    
+
     static int ContinuareFunctieVinde() {
         int input;
         int functionare;
