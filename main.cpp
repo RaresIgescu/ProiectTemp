@@ -577,5 +577,5 @@ int main() {
             continuare = 0;
         }
     }
-    cout << "A fost o placere sa va avem langa noi, la revedere!";
+    cout << "A fost o placere sa va avem langa noi, la revedere!" << "\n";
 }
