@@ -18,9 +18,9 @@ protected:
     int An;
 
 public:
-    explicit Masina(string  marca = "",string  model = "", float pret = 0, int an = 0);
+    explicit Masina(string  marca = "",string  model = "", double pret = 0, int an = 0);
 
-    Masina(string& marca, string& model, float pret);
+    Masina(string& marca, string& model, double pret);
 
     Masina& operator=(const Masina& car1);
 
@@ -34,9 +34,9 @@ public:
 
     [[nodiscard]] string GetModel() const;
 
-    [[nodiscard]] float GetPret() const;
+    [[nodiscard]] double GetPret() const;
 
-    [[nodiscard]] virtual float ObtinePretPePiata() const;
+    [[nodiscard]] virtual double ObtinePretPePiata() const;
 
     [[nodiscard]] virtual int CreeazaMasinaElectrica() const { return 0; }
 
