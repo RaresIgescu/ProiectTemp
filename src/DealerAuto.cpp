@@ -217,7 +217,7 @@ int Dealer_Auto::ContorTotal = 0;
                 cout << "Nu ati ales corect, reincercati!" << "\n";
                 cout << ++NrMarca << "." << Flota[0]->GetMarca() << "\n";
                 for (long unsigned int i = 1 ; i < Flota.size(); i++)
-                    if(Flota[i]->GetMarca() != Flota[i]->GetMarca())
+                    if(Flota[i]->GetMarca() != Flota[i-1]->GetMarca())
                         cout << ++NrMarca << "." << Flota[i-1]->GetMarca() << "\n";
                 cin >> InputModel;
             }
