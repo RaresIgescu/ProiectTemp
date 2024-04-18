@@ -8,22 +8,6 @@
 
 MasinaElectrica::MasinaElectrica(string marca, string model, float pret, int an, int autonomie, int timpinc, string baterie, int procent) : Masina(std::move(marca), std::move(model), pret, an), Autonomie(autonomie), TimpIncarcare(timpinc), NumeBaterie(std::move(baterie)), ProcentBaterie(procent) {}
 
-int MasinaElectrica::GetAutonomie() const{
-    return Autonomie;
-}
-
-int MasinaElectrica::GetTimp() const{
-    return TimpIncarcare;
-}
-
-int MasinaElectrica::GetProcent() const {
-    return ProcentBaterie;
-}
-
-string MasinaElectrica::GetBaterie() const{
-    return NumeBaterie;
-}
-
 MasinaElectrica & MasinaElectrica::operator=(const MasinaElectrica& elec) {
     Masina::operator=(elec);
     this->Autonomie = elec.Autonomie;
