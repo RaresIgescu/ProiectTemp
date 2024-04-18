@@ -423,4 +423,9 @@ int Dealer_Auto::ContorTotal = 0;
             }
         }
     }
+    Dealer_Auto::~Dealer_Auto() {
+        for (auto &masina: Flota) {
+            delete masina;
+        }
+    }
 
