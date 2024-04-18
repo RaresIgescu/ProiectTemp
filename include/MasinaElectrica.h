@@ -28,6 +28,8 @@ public:
 
     [[nodiscard]] int CreeazaMasinaElectrica() const override;
 
+    friend istream& operator>>(istream& in, MasinaElectrica& car); //operator de citire supraincarcat
+    friend ostream& operator<<(ostream& out, const MasinaElectrica& car); //operator de afisare supraincarcat
 };
 
 #endif //PROIECT_MASINAELECTRICA_H
