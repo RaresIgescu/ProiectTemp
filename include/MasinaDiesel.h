@@ -14,7 +14,7 @@ private:
     int NivelPoluare;
     string FirmaMotor;
 public:
-    explicit MasinaDiesel(string marca = "", string model = "", float pret = 0, int an = 0, int rezervor = 0, int poluare = 0, string motor = "");
+    explicit MasinaDiesel(string marca = "", string model = "", double pret = 0, int an = 0, int rezervor = 0, int poluare = 0, string motor = "");
 
     ~MasinaDiesel() override;
 
@@ -22,7 +22,7 @@ public:
 
     bool operator==(const MasinaDiesel& diesel) const;
 
-    [[nodiscard]] float ObtinePretPePiata() const override;
+    [[nodiscard]] double ObtinePretPePiata() const override;
 
     friend istream& operator>>(istream& in, MasinaDiesel& car); //operator de citire supraincarcat
     friend ostream& operator<<(ostream& out, const MasinaDiesel& car);
