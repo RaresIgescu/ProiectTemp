@@ -7,9 +7,9 @@
 #include "Masina.h"
 using namespace std;
 
-Masina::Masina(string marca, string model , float pret, int an): Marca(std::move(marca)), Model(std::move(model)), Pret(pret), An(an) {}
+Masina::Masina(string marca, string model , double pret, int an): Marca(std::move(marca)), Model(std::move(model)), Pret(pret), An(an) {}
 
-Masina::Masina(string& marca, string& model, float pret): Marca(marca), Model(model), Pret(pret), An(2024) {}
+Masina::Masina(string& marca, string& model, double pret): Marca(marca), Model(model), Pret(pret), An(2024) {}
 
 Masina& Masina::operator=(const Masina& car1) = default;
 
@@ -29,7 +29,7 @@ string Masina::GetModel() const {
     return Model;
 }
 
-float Masina::GetPret() const {
+double Masina::GetPret() const {
     return Pret;
 }
 
@@ -57,8 +57,8 @@ ostream& operator<<(ostream& out, const Masina& car) {
     return out;
 }
 
-float Masina::ObtinePretPePiata() const {
-    float PretFinal = Pret;
+double Masina::ObtinePretPePiata() const {
+    double PretFinal = Pret;
     if (An != 2024)
     {
         cout << "Masina nu este noua deci se va aplica o penalizare mai mare asupra pretului" << "\n";
