@@ -26,10 +26,6 @@ public:
     void Vinde() const;
     void Cumpara();
     void VizualizareFlota() const;
-    static int ContinuareFunctieVinde();
-    static int NuGasitFunctieVinde();
-    float ObtinePretMasina(const string& Marca, const string& Model) const;
-    int ObtineAnFab(const string& Marca, const string& Model) const;
     void NumaraObiecte() const;
     void VerificareBaterieElectrice() const;
 };
