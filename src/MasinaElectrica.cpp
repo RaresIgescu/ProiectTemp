@@ -60,3 +60,43 @@ float MasinaElectrica::ObtinePretPePiata() const {
             return 1;
 }
 
+istream& operator>>(istream& in, MasinaElectrica& car) {
+    cout << "Marca masinii: " << endl;
+    in >> car.Marca;
+
+    cout << "Modelul masinii: " << endl;
+    in >> car.Model;
+
+    cout << "Pretul masinii: " << endl;
+    in >> car.Pret;
+
+    cout << "Anul de fabricatie: " << endl;
+    in >> car.An;
+
+    cout << "Autonomie: " << "\n";
+    in >> car.Autonomie;
+
+    cout << "Timpul de incarcare al bateriei: " << "\n";
+    in >> car.TimpIncarcare;
+
+    cout << "Procentajul bateriei: " << "\n";
+    in >> car.ProcentBaterie;
+
+    cout << "Producatorul bateriei: " << "\n";
+    in >> car.NumeBaterie;
+
+    return in;
+}
+
+ostream& operator<<(ostream& out, const MasinaElectrica& car) {
+    out << "Marca: " << car.Marca << endl;
+    out << "Model: " << car.Model << endl;
+    out << "Pret: " << car.Pret << endl;
+    out << "An: " << car.An << endl;
+    out << "Autonomie: " << car.Autonomie << endl;
+    out << "Timp Incarcare: " << car.TimpIncarcare << endl;
+    out << "Procent Baterie: " << car.ProcentBaterie << endl;
+    out << "Numele Bateriei: " << car.NumeBaterie << endl;
+    return out;
+}
+
