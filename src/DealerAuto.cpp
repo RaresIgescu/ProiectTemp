@@ -72,7 +72,7 @@ int Dealer_Auto::ContorTotal = 0;
 
     void Dealer_Auto::VindeMulte() const{
         int NrMasini;
-        float s = 0;
+        double s = 0;
         cout << "Cate masini vreti sa vindeti?" << "\n";
         cin >> NrMasini;
         cout << "Introduceti, in aceasta ordine, marca si modelul fiecarei masini" << "\n";
@@ -109,7 +109,7 @@ int Dealer_Auto::ContorTotal = 0;
     {
             string Marca, Model;
             int An, Input;
-            float Pret;
+            double Pret;
             cout << "Introduceti Marca:";
             cin >> Marca;
             cout << "Introduceti Modelul:";
@@ -176,8 +176,8 @@ int Dealer_Auto::ContorTotal = 0;
         int InputModel;
         int InputContinuare;
         int IndexBanca;
-        float PretInitial = 0;
-        float RataLunara;
+        double PretInitial = 0;
+        double RataLunara;
         string MarcaAleasa;
         string ModelAles;
         string BancaAleasa;
