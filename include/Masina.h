@@ -11,11 +11,9 @@
 using namespace std;
 
 class Masina {
-private:
+protected:
     string Marca;
     string Model;
-
-protected:
     float Pret;
     int An;
 
