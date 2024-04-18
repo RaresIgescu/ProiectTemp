@@ -14,15 +14,9 @@ private:
     int NivelPoluare;
     string FirmaMotor;
 public:
-    MasinaDiesel(string marca = "", string model = "", float pret = 0, int an = 0, int rezervor = 0, int poluare = 0, string motor = "");
+    explicit MasinaDiesel(string marca = "", string model = "", float pret = 0, int an = 0, int rezervor = 0, int poluare = 0, string motor = "");
 
-    ~MasinaDiesel();
-
-    int GetRezervor() const;
-
-    int GetPoluare() const;
-
-    string GetMotor() const;
+    ~MasinaDiesel() override;
 
     MasinaDiesel & operator=(const MasinaDiesel& diesel);
 
