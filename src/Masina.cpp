@@ -11,7 +11,7 @@ Masina::Masina(string marca, string model , float pret, int an): Marca(std::move
 
 Masina::Masina(string& marca, string& model, float pret): Marca(marca), Model(model), Pret(pret), An(2024) {}
 
-Masina& Masina::operator=(const Masina& car1) {};
+Masina& Masina::operator=(const Masina& car1) = default;
 
 Masina::Masina(const Masina& car) =default;
 
@@ -31,10 +31,6 @@ string Masina::GetModel() const {
 
 float Masina::GetPret() const {
     return Pret;
-}
-
-int Masina::GetAn() const {
-    return An;
 }
 
 istream& operator>>(istream& in, Masina& car) {
