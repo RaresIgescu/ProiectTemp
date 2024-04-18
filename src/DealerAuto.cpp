@@ -29,16 +29,14 @@ int Dealer_Auto::ContorTotal = 0;
         Flota.emplace_back(new Masina("PORSCHE", "CAYENNE", 88928.72, 2013 )), ContorTotal++;
         Flota.emplace_back(new Masina("PORSCHE", "911GT3", 32981.92, 2007 )), ContorTotal++;
         Flota.emplace_back(new Masina("PORSCHE", "PANAMERA", 32981.92 )), ContorTotal++;
-        Flota.emplace_back(new MasinaElectrica("TESLA", "MODELX", 32893, 2017, 320, 3, "XIAOMI", 80)), ContorTotal++;
+        Flota.emplace_back(new MasinaElectrica("TESLA", "MODELX", 32893, 2017, 320, 3, 80, "XIAOMI")), ContorTotal++;
         Flota.emplace_back(new MasinaElectrica("TESLA", "MODELY",
-                                               55000, 2016, 0, 2,
-                                               "XIOAMI", 63)), ContorTotal++;
+                                               55000, 2016, 0, 2, 63, "XIOAMI")), ContorTotal++;
         Flota.emplace_back(new MasinaElectrica("TESLA", "MODELS",
-                                               90000, 2024, 400, 8,
-                                               "TESLA", 100)), ContorTotal++;
+                                               90000, 2024, 400, 8, 100, "TESLA")), ContorTotal++;
         Flota.emplace_back(new MasinaElectrica("HYUNDAI", "BAYON",
                                                42000, 2018, 280, 4,
-                                               "HYUNDAI", 88)), ContorTotal++;
+                                                88, "HYUNDAI")), ContorTotal++;
         Flota.emplace_back(new MasinaDiesel("VOLVO", "XC90",
                                                93999, 2024, 85,
                                                4, "BMW")), ContorTotal++;
