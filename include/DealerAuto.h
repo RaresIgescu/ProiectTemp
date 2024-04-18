@@ -16,7 +16,7 @@ using namespace std;
 
 class Dealer_Auto {
 private:
-    float PretFinal;
+    double PretFinal;
     vector <Masina*> Flota;
     vector <Banca> BanciPartenere;
     static int ContorTotal;
