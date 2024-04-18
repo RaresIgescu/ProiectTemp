@@ -28,29 +28,27 @@ float MasinaElectrica::ObtinePretPePiata() const {
         {
             cout << "Masina nu este noua, dar pentru ca este electrica va suferi o penalizare redusa" << "\n";
             if (ProcentBaterie > 75) {
-                cout << "Baterie este optima pentru functionare, pretul final este de: " << PretFinal - (PretFinal / 20)
-                     << "\n";
-                return PretFinal - (PretFinal / 20);
+                cout << "Baterie este optima pentru functionare, pretul final este de: " << PretFinal - (PretFinal / 20);
             } else {
-                cout << "Nivelul bateriei nu este unul optim, va putem oferi doar: " << PretFinal - (2 * PretFinal / 25)
-                     << "\n";
+                cout << "Nivelul bateriei nu este unul optim, va putem oferi doar: " << PretFinal - (2 * PretFinal / 25);
                 return PretFinal - (2 * PretFinal / 25);
             }
         }
         else
         {
-        cout << "Masina este noua, asa ca pretul va suferi doar adaosul comercial" << "\n";
-        if (ProcentBaterie > 75) {
-            cout << "Baterie este optima pentru functionare, pretul final este de: "
-                 << PretFinal - (3 * PretFinal / 100) << "\n";
-            return PretFinal - (3 * PretFinal / 100);
-        }
-        else {
-            cout << "Bateria nu este la un nivel optim de functionare, va putem oferi doar: "
-                 << PretFinal - (PretFinal / 20) << "\n";
+            cout << "Masina este noua, asa ca pretul va suferi doar adaosul comercial" << "\n";
+            if (ProcentBaterie > 75) 
+            {
+                cout << "Baterie este optima pentru functionare, pretul final este de: ";
+                return PretFinal - (3 * PretFinal / 100);
+            }
+            else
+            {
+            cout << "Bateria nu este la un nivel optim de functionare, va putem oferi doar: ";
             return PretFinal - (PretFinal / 20);
+            }
         }
-        }
+        return 0;
     }
 
     int MasinaElectrica::CreeazaMasinaElectrica() const {
