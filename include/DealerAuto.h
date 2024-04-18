@@ -28,6 +28,7 @@ public:
     void VizualizareFlota() const;
     void NumaraObiecte() const;
     void VerificareBaterieElectrice() const;
+    void ObtinePret() const;
 };
 
 #endif //PROIECT_DEALERAUTO_H
