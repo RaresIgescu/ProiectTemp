@@ -133,7 +133,7 @@ int Dealer_Auto::ContorTotal = 0;
                             Pret = masina->GetPret();
                             cout << "Masina este electrica, acestea sunt la mare cautare, pretul final va fi de " << Pret - (Pret/20) << "\n";
                             cout << "Suntei de acord cu pretul oferit?" << "\n";
-                            cout << "1 - DA \ 2 - NU" << "\n";
+                            cout << "1 - DA || 2 - NU" << "\n";
                             cin >> Input;
                             if (Input == 1)
                                 cout << "Ne bucuram, banii vor fi virati in contul dvs. in scurt timp." << "\n";
@@ -145,7 +145,7 @@ int Dealer_Auto::ContorTotal = 0;
                             Pret = masina->GetPret();
                             cout << "Masina este pe diesel, ele polueaza mai tare, pretul final va fi de " << Pret - (Pret/10) << "\n";
                             cout << "Suntei de acord cu pretul oferit?" << "\n";
-                            cout << "1 - DA \ 2 - NU" << "\n";
+                            cout << "1 - DA || 2 - NU" << "\n";
                             cin >> Input;
                             if (Input == 1)
                                 cout << "Ne bucuram, banii vor fi virati in contul dvs. in scurt timp." << "\n";
@@ -157,7 +157,7 @@ int Dealer_Auto::ContorTotal = 0;
                             Pret = masina->GetPret();
                             cout << "Masina este obisnuita pretul final va fi de " << Pret - (3*Pret/20) << "\n";
                             cout << "Suntei de acord cu pretul oferit?" << "\n";
-                            cout << "1 - DA \ 2 - NU" << "\n";
+                            cout << "1 - DA || 2 - NU" << "\n";
                             cin >> Input;
                             if (Input == 1)
                                 cout << "Ne bucuram, banii vor fi virati in contul dvs. in scurt timp." << "\n";
@@ -167,7 +167,7 @@ int Dealer_Auto::ContorTotal = 0;
                     }
                 }
             }
-            if (ok1 == false)
+            if (!ok1)
                 cout << "Masina nu a fost gasita in stockul nostru si nu va putem face o oferta." << "\n";
         }
 
@@ -378,44 +378,6 @@ int Dealer_Auto::ContorTotal = 0;
                     cout << ++NrModel << ". " << j->GetModel() << "\n";
             cout << "\n";
         }
-    }
-
-    int Dealer_Auto::ContinuareFunctieVinde() {
-        int input;
-        int functionare;
-        cout << "Doriti sa continuati?" << endl;
-        cout << "1 - Da\n2 - Nu" << "\n";
-        cin >> input;
-        if (input == 1)
-        {
-            cout << "Banii vor fi virati in contul dumneavoastra in cel mai scurt timp, multumim ca ne-ati ales!" << endl;
-        }
-        else
-            cout << "Nu este nicio problema, oferta ramane valabila incontinuare!" << endl;
-        cout << "Daca doriti sa vindeti alta masina apasati 1, daca vreti sa va intoarceti la meniul principal apasati 0" << endl;
-        cin >> functionare;
-        return functionare;
-    }
-
-    int Dealer_Auto::NuGasitFunctieVinde() {
-        int functionare;
-        cout << "Nu va putem face o oferta deoarece masina nu se afla in stockul nostru in acest moment!" << "\n";
-        cout << "Daca doriti sa vindeti alta masina apasati 1, daca vreti sa va intoarceti la meniul principal apasati 0" << "\n";
-        cin >> functionare;
-        return functionare;
-    }
-
-    float Dealer_Auto::ObtinePretMasina(const string& Marca, const string& Model) const{
-        for(auto & i : Flota)
-            if(Marca == i->GetMarca() and Model == i->GetModel())
-                return i->GetPret();
-        return 0;
-    }
-    int Dealer_Auto::ObtineAnFab(const string& Marca, const string& Model) const{
-        for(auto & i : Flota)
-            if(Marca == i->GetMarca() and Model == i->GetModel())
-                return i->GetAn();
-        return 0;
     }
 
     void Dealer_Auto::NumaraObiecte() const {
