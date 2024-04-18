@@ -16,7 +16,7 @@ private:
     int ProcentBaterie;
     string NumeBaterie;
 public:
-    explicit MasinaElectrica(string marca = "", string model = "", float pret = 0, int an = 0, int autonomie = 0, int timpinc = 0, string baterie = "", int procent = 0);
+    explicit MasinaElectrica(string marca = "", string model = "", float pret = 0, int an = 0, int autonomie = 0, int timpinc = 0, int procent = 0,  string baterie = "");
 
     MasinaElectrica & operator=(const MasinaElectrica& elec);
 
