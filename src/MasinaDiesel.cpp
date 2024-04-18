@@ -7,7 +7,7 @@
 #include "MasinaDiesel.h"
 
 
-MasinaDiesel::MasinaDiesel(std::string marca, std::string model, float pret, int an, int rezervor, int poluare,
+MasinaDiesel::MasinaDiesel(std::string marca, std::string model, double pret, int an, int rezervor, int poluare,
                            std::string motor): Masina(std::move(marca), std::move(model), pret, an), CapacitateRezervor(rezervor), NivelPoluare(poluare), FirmaMotor(std::move(motor)) {}
 
 MasinaDiesel::~MasinaDiesel() =default;
@@ -18,8 +18,8 @@ bool MasinaDiesel::operator==(const MasinaDiesel &diesel) const{
     return Masina::operator==(diesel) and CapacitateRezervor == diesel.CapacitateRezervor and NivelPoluare == diesel.NivelPoluare;
 }
 
-float MasinaDiesel::ObtinePretPePiata() const {
-    float PretFinal = Pret;
+double MasinaDiesel::ObtinePretPePiata() const {
+    double PretFinal = Pret;
     if (An != 2024)
     {
         cout << "Masina nu este noua, dar pentru ca este pe diesel va suferi o penalizare mai mare" << "\n";
