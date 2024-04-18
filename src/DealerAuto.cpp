@@ -412,3 +412,15 @@ int Dealer_Auto::ContorTotal = 0;
                 }
     }
 
+    void Dealer_Auto::ObtinePret() const {
+        string marca, model;
+        cout << "Introduceti marca si modelul masinii: " << "\n";
+        cin >> marca >> model;
+        for (const auto &masina: Flota) {
+            if (masina->GetMarca() == marca and masina->GetModel() == model) {
+                Masina *pointer = masina;
+                cout << pointer->ObtinePretPePiata() << '\n';
+            }
+        }
+    }
+
