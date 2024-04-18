@@ -72,7 +72,7 @@ int main() {
         }
         else if(InputContinuare == 6)
         {
-            MasinaElectrica electric("Tesla", "Model X", 70000, 2024, 140, 3, "Xiaomi", 80);
+            MasinaElectrica electric("Tesla", "Model X", 70000, 2024, 140, 3, 80, "Xiaomi");
             Masina* pointer = &electric;
             cout << pointer->ObtinePretPePiata();
 
