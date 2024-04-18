@@ -14,7 +14,7 @@ class Masina {
 protected:
     string Marca;
     string Model;
-    float Pret;
+    double Pret;
     int An;
 
 public:
