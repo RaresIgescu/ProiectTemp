@@ -18,23 +18,15 @@ private:
 public:
     explicit MasinaElectrica(string marca = "", string model = "", float pret = 0, int an = 0, int autonomie = 0, int timpinc = 0, string baterie = "", int procent = 0);
 
-    int GetAutonomie() const;
-
-    int GetTimp() const;
-
-    string GetBaterie() const;
-
-    int GetProcent() const;
-
     MasinaElectrica & operator=(const MasinaElectrica& elec);
 
     bool operator==(const MasinaElectrica& elec) const;
 
     ~MasinaElectrica()override;
 
-    float ObtinePretPePiata() const override;
+    [[nodiscard]] float ObtinePretPePiata() const override;
 
-    int CreeazaMasinaElectrica() const override;
+    [[nodiscard]] int CreeazaMasinaElectrica() const override;
 
 };
 
