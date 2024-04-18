@@ -12,17 +12,17 @@ using namespace std;
 class Banca {
 private:
     string Nume;
-    float TVA;
+    double TVA;
     vector <int> NumarRate;
 
 public:
-    Banca(string  nume, float tva,const vector <int>& rate);
+    Banca(string  nume, double tva,const vector <int>& rate);
 
     [[nodiscard]] string GetNume() const;
 
-    [[nodiscard]] float CalculPretFinal(float pret) const;
+    [[nodiscard]] double CalculPretFinal(double pret) const;
 
-    [[nodiscard]] float GetRataLunara(float pret) const;
+    [[nodiscard]] double GetRataLunara(double pret) const;
 
 };
 #endif //PROIECT_BANCA_H
