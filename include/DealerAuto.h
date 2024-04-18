@@ -7,6 +7,7 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include <memory>
 #include "Masina.h"
 #include "Banca.h"
 #include "MasinaDiesel.h"
@@ -21,6 +22,7 @@ private:
     static int ContorTotal;
 public:
     Dealer_Auto();
+    ~Dealer_Auto();
     void VerificareStocMasina() const;
     void VindeMulte() const;
     void Vinde() const;
