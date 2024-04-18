@@ -18,11 +18,11 @@ private:
 public:
     Banca(string  nume, float tva,const vector <int>& rate);
 
-    string GetNume() const;
+    [[nodiscard]] string GetNume() const;
 
-    float CalculPretFinal(float pret) const;
+    [[nodiscard]] float CalculPretFinal(float pret) const;
 
-    float GetRataLunara(float pret) const;
+    [[nodiscard]] float GetRataLunara(float pret) const;
 
 };
 #endif //PROIECT_BANCA_H
