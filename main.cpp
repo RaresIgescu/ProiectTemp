@@ -15,8 +15,8 @@ int main() {
         cout << "3. Vinde o masina." << "\n";
         cout << "4. Cumpara o masina." << "\n";
         cout << "5. Vinde mai multe masini. (Citire a n obiecte)" << "\n";
-        cout << "6. Obtine pretul pe piata al unei masini. (Upcasting/Downcasting)" << "\n";
-        cout << "7. Numarul total de masini din flota (Downcasting/Upcasting)" << "\n";
+        cout << "6. Obtine pretul pe piata al unei masini. (Upcasting)" << "\n";
+        cout << "7. Numarul total de masini din flota (Downcasting)" << "\n";
         cout << "8. Verificare autonomie masina electrica (Ilustrare Exceptie)" << "\n";
         cout << "9. Iesire." << "\n";
         cin >> InputContinuare;
@@ -72,14 +72,9 @@ int main() {
         }
         else if(InputContinuare == 6)
         {
-            MasinaElectrica electric("Tesla", "Model X", 70000, 2024, 140, 3, 80, "Xiaomi");
-            Masina* pointer = &electric;
-            cout << pointer->ObtinePretPePiata();
-
-            Masina* carptr = &electric;
-            auto *electricCarPtr = dynamic_cast<MasinaElectrica*>(carptr);
-            cout << electricCarPtr->ObtinePretPePiata();
-
+              dealer.ObtinePret();
+            cout << "Continuati procesul?" << "\n";
+            cout << "1 - Da\n2 - Nu" << "\n";
             cin >> InputContinuare;
             if(InputContinuare == 1)
                 continuare = 1;
