@@ -74,11 +74,11 @@ int main() {
         {
             MasinaElectrica electric("Tesla", "Model X", 70000, 2024, 140, 3, "Xiaomi", 80);
             Masina* pointer = &electric;
-            pointer->ObtinePretPePiata();
+            cout << pointer->ObtinePretPePiata();
 
             Masina* carptr = &electric;
-            MasinaElectrica *electricCarPtr = dynamic_cast<MasinaElectrica*>(carptr);
-            electricCarPtr->ObtinePretPePiata();
+            auto *electricCarPtr = dynamic_cast<MasinaElectrica*>(carptr);
+            cout << electricCarPtr->ObtinePretPePiata();
 
             cin >> InputContinuare;
             if(InputContinuare == 1)
