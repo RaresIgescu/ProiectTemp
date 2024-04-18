@@ -16,7 +16,7 @@ private:
     int ProcentBaterie;
     string NumeBaterie;
 public:
-    explicit MasinaElectrica(string marca = "", string model = "", float pret = 0, int an = 0, int autonomie = 0, int timpinc = 0, int procent = 0,  string baterie = "");
+    explicit MasinaElectrica(string marca = "", string model = "", double pret = 0, int an = 0, int autonomie = 0, int timpinc = 0, int procent = 0,  string baterie = "");
 
     MasinaElectrica & operator=(const MasinaElectrica& elec);
 
@@ -24,7 +24,7 @@ public:
 
     ~MasinaElectrica()override;
 
-    [[nodiscard]] float ObtinePretPePiata() const override;
+    [[nodiscard]] double ObtinePretPePiata() const override;
 
     [[nodiscard]] int CreeazaMasinaElectrica() const override;
 
