@@ -6,7 +6,7 @@
 #include <utility>
 #include "MasinaElectrica.h"
 
-MasinaElectrica::MasinaElectrica(string marca, string model, float pret, int an, int autonomie, int timpinc, int procent, string baterie) : Masina(std::move(marca), std::move(model), pret, an), Autonomie(autonomie), TimpIncarcare(timpinc), ProcentBaterie(procent), NumeBaterie(std::move(baterie)) {}
+MasinaElectrica::MasinaElectrica(string marca, string model, double pret, int an, int autonomie, int timpinc, int procent, string baterie) : Masina(std::move(marca), std::move(model), pret, an), Autonomie(autonomie), TimpIncarcare(timpinc), ProcentBaterie(procent), NumeBaterie(std::move(baterie)) {}
 
 MasinaElectrica & MasinaElectrica::operator=(const MasinaElectrica& elec) {
     Masina::operator=(elec);
@@ -22,8 +22,8 @@ bool MasinaElectrica::operator==(const MasinaElectrica &elec) const{
 
 MasinaElectrica::~MasinaElectrica() =default;
 
-float MasinaElectrica::ObtinePretPePiata() const {
-    float PretFinal = Pret;
+double MasinaElectrica::ObtinePretPePiata() const {
+    double PretFinal = Pret;
         if (An != 2024)
         {
             cout << "Masina nu este noua, dar pentru ca este electrica va suferi o penalizare redusa" << "\n";
