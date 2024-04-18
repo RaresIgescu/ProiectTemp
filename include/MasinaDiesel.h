@@ -21,6 +21,11 @@ public:
     MasinaDiesel & operator=(const MasinaDiesel& diesel);
 
     bool operator==(const MasinaDiesel& diesel) const;
+
+    [[nodiscard]] float ObtinePretPePiata() const override;
+
+    friend istream& operator>>(istream& in, MasinaDiesel& car); //operator de citire supraincarcat
+    friend ostream& operator<<(ostream& out, const MasinaDiesel& car);
 };
 
 
