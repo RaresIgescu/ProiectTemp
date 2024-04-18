@@ -7,22 +7,22 @@
 #include <vector>
 #include "Banca.h"
 
-Banca::Banca(string  nume, float tva,const vector <int>& rate): Nume(std::move(nume)), TVA(tva), NumarRate(rate) {}
+Banca::Banca(string  nume, double tva,const vector <int>& rate): Nume(std::move(nume)), TVA(tva), NumarRate(rate) {}
 
 string Banca::GetNume() const{
     return Nume;
 }
 
-float Banca::CalculPretFinal(float pret) const {
+double Banca::CalculPretFinal(double pret) const {
     return pret + (pret * (TVA/100));
 }
 
-float Banca::GetRataLunara(float pret) const{
+double Banca::GetRataLunara(double pret) const{
     int NrRata = 0;
     int Indice;
     for(int i : NumarRate)
         cout << ++NrRata << ". " << i << "\n";
     cout << "Alegeti indecele numarului de rate." << "\n";
     cin >> Indice;
-    return float(pret/NumarRate[Indice-1]);
+    return double(pret/NumarRate[Indice-1]);
 }
