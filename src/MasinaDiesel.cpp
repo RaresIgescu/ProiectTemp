@@ -48,7 +48,6 @@ double MasinaDiesel::ObtinePretPePiata() const {
             return PretFinal - (3 * PretFinal / 25);
         }
     }
-    return 0;
 }
 
 istream& operator>>(istream& in, MasinaDiesel& car) {
