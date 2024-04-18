@@ -6,7 +6,7 @@
 #include <utility>
 #include "MasinaElectrica.h"
 
-MasinaElectrica::MasinaElectrica(string marca, string model, float pret, int an, int autonomie, int timpinc, string baterie, int procent) : Masina(std::move(marca), std::move(model), pret, an), Autonomie(autonomie), TimpIncarcare(timpinc), NumeBaterie(std::move(baterie)), ProcentBaterie(procent) {}
+MasinaElectrica::MasinaElectrica(string marca, string model, float pret, int an, int autonomie, int timpinc, int procent, string baterie) : Masina(std::move(marca), std::move(model), pret, an), Autonomie(autonomie), TimpIncarcare(timpinc), ProcentBaterie(procent), NumeBaterie(std::move(baterie)) {}
 
 MasinaElectrica & MasinaElectrica::operator=(const MasinaElectrica& elec) {
     Masina::operator=(elec);
@@ -37,7 +37,7 @@ float MasinaElectrica::ObtinePretPePiata() const {
         else
         {
             cout << "Masina este noua, asa ca pretul va suferi doar adaosul comercial" << "\n";
-            if (ProcentBaterie > 75) 
+            if (ProcentBaterie > 75)
             {
                 cout << "Baterie este optima pentru functionare, pretul final este de: ";
                 return PretFinal - (3 * PretFinal / 100);
