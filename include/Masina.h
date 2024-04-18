@@ -32,17 +32,15 @@ public:
 
     int operator==(const Masina& car) const;
 
-    string GetMarca() const;
+    [[nodiscard]] string GetMarca() const;
 
-    string GetModel() const;
+    [[nodiscard]] string GetModel() const;
 
-    float GetPret() const;
+    [[nodiscard]] float GetPret() const;
 
-    int GetAn() const;
+    [[nodiscard]] virtual float ObtinePretPePiata() const;
 
-    virtual float ObtinePretPePiata() const;
-
-    virtual int CreeazaMasinaElectrica() const {return 0;}
+    [[nodiscard]] virtual int CreeazaMasinaElectrica() const { return 0; }
 
     friend istream& operator>>(istream& in, Masina& car); //operator de citire supraincarcat
     friend ostream& operator<<(ostream& out, const Masina& car); //operator de afisare supraincarcat
