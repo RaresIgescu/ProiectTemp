@@ -25,4 +25,4 @@ float Banca::GetRataLunara(float pret) const{
     cout << "Alegeti indecele numarului de rate." << "\n";
     cin >> Indice;
     return float(pret/NumarRate[Indice-1]);
-    }
+}
