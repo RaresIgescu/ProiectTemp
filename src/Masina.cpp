@@ -62,13 +62,13 @@ float Masina::ObtinePretPePiata() const {
     if (An != 2024)
     {
         cout << "Masina nu este noua deci se va aplica o penalizare mai mare asupra pretului" << "\n";
-        cout << "Pretul final este de: " << PretFinal - (PretFinal / 10) << "\n";
+        cout << "Pretul final este de: ";
         return PretFinal - (PretFinal / 10);
     }
     else
     {
         cout << "Pentru ca masina este noua asupra pretului se va adauga doar adaosul comercial" << "\n";
-        cout << "Pretul final este de: "  << PretFinal - (3 * PretFinal / 100) << "\n";
+        cout << "Pretul final este de: ";
         return PretFinal - (3 * PretFinal / 100);
     }
 }
