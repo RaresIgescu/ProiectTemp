@@ -93,9 +93,10 @@ EXPECT_EQ(masina.GetPret(), 12384.14);
 }
 
 // Test pentru operatorul de afisare supraincarcat
-TEST(MasinaTest, OperatorAfisareSupraincarcatTest) {
-Masina masina("AUDI", "A3", 12384.14, 2014);
-std::ostringstream output;
-output << masina;
-EXPECT_EQ(output.str(), "AUDI A3 12384.14 2014");
+TEST(MasinaTest, OperatorOut) {
+Masina masina("Dacia", "Logan", 15000, 2022);
+std::stringstream out;
+out << masina;
+std::string expectedOutput = "Marca: Dacia\nModel: Logan\nPret: 15000\nAn: 2022\n";
+EXPECT_EQ(out.str(), expectedOutput);
 }
