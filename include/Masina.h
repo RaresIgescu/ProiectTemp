@@ -20,7 +20,7 @@ protected:
 public:
     explicit Masina(string  marca = "",string  model = "", double pret = 0, int an = 0);
 
-    Masina(string marca, string model, double pret);
+    Masina(string& marca, string& model, double pret);
 
     Masina& operator=(const Masina& car1);
 
