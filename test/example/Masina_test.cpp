@@ -65,9 +65,14 @@ EXPECT_EQ(masina.GetPret(), 12384.14);
 }
 
 // Test pentru metoda ObtinePretPePiata
-TEST(MasinaTest, ObtinePretPePiataTest) {
-Masina masina("AUDI", "A3", 12384.14, 2014);
-EXPECT_EQ(masina.ObtinePretPePiata(), 12384.14); // Presupunând că această metodă returnează același preț
+TEST(MasinaTest, ObtinePretPePiataTestNou) {
+Masina masina("DACIA", "LOGAN", 20000, 2024);
+EXPECT_EQ(masina.ObtinePretPePiata(), 19400);
+}
+
+TEST(MasinaTest, ObtinePretPePiataTestVechi) {
+Masina masina("DACIA", "LOGAN", 20000, 2010);
+EXPECT_EQ(masina.ObtinePretPePiata(), 18000);
 }
 
 // Test pentru metoda CreeazaMasinaElectrica
