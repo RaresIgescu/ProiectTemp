@@ -16,10 +16,12 @@ TEST(MasinaTest, ConstructorCuParametriReferintaTest) {
 string marca = "AUDI";
 string model = "A3";
 double pret = 12384.14;
-Masina masina(marca, model, pret);
+int an = 2024;
+Masina masina(marca, model, pret, an);
 EXPECT_EQ(masina.GetMarca(), marca);
 EXPECT_EQ(masina.GetModel(), model);
 EXPECT_EQ(masina.GetPret(), pret);
+EXPECT_QE(masina.GetAn(), an);
 }
 
 // Test pentru operatorul de atribuire
