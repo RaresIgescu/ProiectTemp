@@ -20,7 +20,7 @@ protected:
 public:
     explicit Masina(string  marca = "",string  model = "", double pret = 0, int an = 0);
 
-    Masina(string& marca = (string &) "", string& model = (string &) "", double pret = 0);
+    Masina(string marca, string model, double pret);
 
     Masina& operator=(const Masina& car1);
 
@@ -35,6 +35,8 @@ public:
     [[nodiscard]] string GetModel() const;
 
     [[nodiscard]] double GetPret() const;
+
+    [[nodiscard]] int GetAn() const;
 
     [[nodiscard]] virtual double ObtinePretPePiata() const;
 
