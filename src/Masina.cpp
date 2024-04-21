@@ -9,7 +9,7 @@ using namespace std;
 
 Masina::Masina(string marca, string model , double pret, int an): Marca(std::move(marca)), Model(std::move(model)), Pret(pret), An(an) {}
 
-Masina::Masina(string& marca, string& model, double pret): Marca(marca), Model(model), Pret(pret), An(2024) {}
+Masina::Masina(string marca, string model, double pret): Marca(marca), Model(model), Pret(pret), An(2024) {}
 
 Masina& Masina::operator=(const Masina& car1) = default;
 
@@ -31,6 +31,10 @@ string Masina::GetModel() const {
 
 double Masina::GetPret() const {
     return Pret;
+}
+
+int Masina::GetAn() const {
+    return An;
 }
 
 istream& operator>>(istream& in, Masina& car) {
