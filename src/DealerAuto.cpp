@@ -334,7 +334,8 @@ int Dealer_Auto::ContorTotal = 0;
                         cout << "Cheia " << NrBanca << " nu a fost găsită în map.\n";
                     }
                     cout << "Avand in vedere ca folositi banca ";
-                    i->second.afisare();
+                    if(i != BanciPartenere.end())
+                        i->second.afisare();
                     cout << " dupa adaugarea TVAului bancii, pretul final al masinii va fi " << i->second.CalculPretFinal(PretInitial) << "\n";
                     PretFinal = i->second.CalculPretFinal(PretInitial);
                     cout << "Doriti sa platiti in rate" <<"\n";
