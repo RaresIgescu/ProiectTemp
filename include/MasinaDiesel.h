@@ -25,8 +25,10 @@ public:
 
     [[nodiscard]] T2 ObtinePretPePiata() const override;
 
-    friend istream& operator>>(istream& in, MasinaDiesel& car); //operator de citire supraincarcat
-    friend ostream& operator<<(ostream& out, const MasinaDiesel& car);
+    template <class U1, class U2, class U3>
+    friend istream& operator>>(istream& in, MasinaDiesel<U1,U2,U3>& car); //operator de citire supraincarcat
+    template <class U1, class U2, class U3>
+    friend ostream& operator<<(ostream& out, const MasinaDiesel<U1,U2,U3>& car);
 };
 
 

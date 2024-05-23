@@ -29,8 +29,10 @@ public:
 
     [[nodiscard]] T3 CreeazaMasinaElectrica() const override;
 
-    friend istream& operator>>(istream& in, MasinaElectrica& car); //operator de citire supraincarcat
-    friend ostream& operator<<(ostream& out, const MasinaElectrica& car); //operator de afisare supraincarcat
+    template <class U1, class U2, class U3>
+    friend istream& operator>>(istream& in, MasinaElectrica<U1,U2,U3>& car); //operator de citire supraincarcat
+    template <class U1, class U2, class U3>
+    friend ostream& operator<<(ostream& out, const MasinaElectrica<U1,U2,U3>& car); //operator de afisare supraincarcat
 };
 
 #endif //PROIECT_MASINAELECTRICA_H
