@@ -6,7 +6,7 @@
 #include "MasinaElectrica.h"
 
 template <class T1, class T2, class T3>
-MasinaElectrica<T1, T2, T3>::MasinaElectrica(T1 marca, T1 model, T2 pret, T3 an, T3 autonomie, T3 timpinc, T3 procent, T1 baterie) : Masina<T1, T2, T3>(marca, model, pret, an), Autonomie(autonomie), TimpIncarcare(timpinc), ProcentBaterie(procent), NumeBaterie(std::move(baterie)) {}
+MasinaElectrica<T1, T2, T3>::MasinaElectrica(const T1& marca, const T1& model, T2 pret, T3 an, T3 autonomie, T3 timpinc, T3 procent, T1 baterie) : Masina<T1, T2, T3>(marca, model, pret, an), Autonomie(autonomie), TimpIncarcare(timpinc), ProcentBaterie(procent), NumeBaterie(std::move(baterie)) {}
 
 template <class T1, class T2, class T3>
 MasinaElectrica<T1, T2, T3>& MasinaElectrica<T1, T2, T3>::operator=(const MasinaElectrica& elec) {

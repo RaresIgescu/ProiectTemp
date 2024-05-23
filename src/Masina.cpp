@@ -6,10 +6,10 @@
 using namespace std;
 
 template <class T1, class T2, class T3>
-Masina<T1, T2, T3>::Masina(T1 marca, T1 model, T2 pret, T3 an): Marca(marca), Model(model), Pret(pret), An(an) {}
+Masina<T1, T2, T3>::Masina(const T1& marca,const T1& model, T2 pret, T3 an): Marca(marca), Model(model), Pret(pret), An(an) {}
 
 template <class T1, class T2, class T3>
-Masina<T1, T2, T3>::Masina(T1& marca, T1& model, T2 pret): Marca(marca), Model(model), Pret(pret), An(2024) {}
+Masina<T1, T2, T3>::Masina(const T1& marca,const T1& model, T2 pret): Marca(marca), Model(model), Pret(pret), An(2024) {}
 
 template <class T1, class T2, class T3>
 Masina<T1, T2, T3>& Masina<T1, T2, T3>::operator=(const Masina& car1) = default;

@@ -5,8 +5,8 @@
 #include "MasinaDiesel.h"
 
 template <class T1, class T2, class T3>
-MasinaDiesel<T1, T2, T3>::MasinaDiesel(T1 marca, T1 model, T2 pret, T3 an, T3 rezervor, T3 poluare,
-                           T1 motor): Masina<T1, T2, T3>(marca, model, pret, an), CapacitateRezervor(rezervor), NivelPoluare(poluare), FirmaMotor(motor) {}
+MasinaDiesel<T1, T2, T3>::MasinaDiesel(const T1& marca,const T1& model, T2 pret, T3 an, T3 rezervor, T3 poluare,
+                           const T1& motor): Masina<T1, T2, T3>(marca, model, pret, an), CapacitateRezervor(rezervor), NivelPoluare(poluare), FirmaMotor(motor) {}
 
 template <class T1, class T2, class T3>
 MasinaDiesel<T1, T2, T3>::~MasinaDiesel() =default;
