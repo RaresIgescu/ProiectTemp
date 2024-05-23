@@ -44,7 +44,9 @@ public:
 
     virtual void AfiseazaDetalii() const;
 
-    friend istream& operator>>(istream& in, Masina<T1, T2, T3>& car); //operator de citire supraincarcat
-    friend ostream& operator<<(ostream& out, const Masina<T1, T2, T3>& car); //operator de afisare supraincarcat
+    template <class U1, class U2, class U3>
+    friend istream& operator>>(istream& in, Masina<U1, U2, U3>& car); //operator de citire supraincarcat
+    template <class U1, class U2, class U3>
+    friend ostream& operator<<(ostream& out, const Masina<U1, U2, U3>& car); //operator de afisare supraincarcat
 };
 #endif //PROIECT_MASINA_H
