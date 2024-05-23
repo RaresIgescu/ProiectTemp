@@ -9,10 +9,6 @@
 
 Banca::Banca(string nume, double tva,const vector <int>& rate): Nume(std::move(nume)), TVA(tva), NumarRate(rate) {}
 
-string Banca::GetNume() const{
-    return Nume;
-}
-
 double Banca::CalculPretFinal(double pret) const {
     return pret + (pret * (TVA/100));
 }
