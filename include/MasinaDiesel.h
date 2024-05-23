@@ -15,7 +15,7 @@ private:
     T3 NivelPoluare;
     T1 FirmaMotor;
 public:
-    explicit MasinaDiesel(T1 marca = "", T1 model = "", T2 pret = 0, T3 an = 0, T3 rezervor = 0, T3 poluare = 0, T1 motor = "");
+    explicit MasinaDiesel(const T1& marca = "",const T1& model = "", T2 pret = 0, T3 an = 0, T3 rezervor = 0, T3 poluare = 0,const T1& motor = "");
 
     ~MasinaDiesel() override;
 

@@ -20,9 +20,9 @@ protected:
     T3 An;
 
 public:
-    explicit Masina(T1 marca = "", T1 model = "", T2 pret = 0, T3 an = 0);
+    explicit Masina(const T1& marca = "",const T1& model = "", T2 pret = 0, T3 an = 0);
 
-    Masina(T1& marca, T1& model, T2 pret);
+    Masina(const T1& marca,const T1& model, T2 pret);
 
     Masina<T1, T2, T3>& operator=(const Masina<T1, T2, T3>& car1);
 

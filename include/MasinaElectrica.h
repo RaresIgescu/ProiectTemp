@@ -17,7 +17,7 @@ private:
     T3 ProcentBaterie;
     T1 NumeBaterie;
 public:
-    explicit MasinaElectrica(T1 marca = "", T1 model = "", T2 pret = 0, T3 an = 0, T3 autonomie = 0, T3 timpinc = 0, T3 procent = 0,  T1 baterie = "");
+    explicit MasinaElectrica(const T1& marca = "",const T1& model = "", T2 pret = 0, T3 an = 0, T3 autonomie = 0, T3 timpinc = 0, T3 procent = 0,  T1 baterie = "");
 
     MasinaElectrica & operator=(const MasinaElectrica& elec);
 
