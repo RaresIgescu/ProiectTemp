@@ -6,21 +6,25 @@
 #include <utility>
 #include "MasinaDiesel.h"
 
+template <class T1, class T2, class T3>
+MasinaDiesel<T1, T2, T3>::MasinaDiesel(T1 marca, T1 model, T2 pret, T3 an, T3 rezervor, T3 poluare,
+                           T1 motor): Masina<T1, T2, T3>(marca, model, pret, an), CapacitateRezervor(rezervor), NivelPoluare(poluare), FirmaMotor(motor) {}
 
-MasinaDiesel::MasinaDiesel(std::string marca, std::string model, double pret, int an, int rezervor, int poluare,
-                           std::string motor): Masina(std::move(marca), std::move(model), pret, an), CapacitateRezervor(rezervor), NivelPoluare(poluare), FirmaMotor(std::move(motor)) {}
+template <class T1, class T2, class T3>
+MasinaDiesel<T1, T2, T3>::~MasinaDiesel() =default;
 
-MasinaDiesel::~MasinaDiesel() =default;
+template <class T1, class T2, class T3>
+MasinaDiesel<T1, T2, T3>& MasinaDiesel<T1, T2, T3>::operator=(const MasinaDiesel& diesel) = default;
 
-MasinaDiesel & MasinaDiesel::operator=(const MasinaDiesel& diesel) = default;
-
-bool MasinaDiesel::operator==(const MasinaDiesel &diesel) const{
-    return Masina::operator==(diesel) and CapacitateRezervor == diesel.CapacitateRezervor and NivelPoluare == diesel.NivelPoluare;
+template <class T1, class T2, class T3>
+bool MasinaDiesel<T1, T2, T3>::operator==(const MasinaDiesel &diesel) const{
+    return Masina<T1, T2, T3>::operator==(diesel) and CapacitateRezervor == diesel.CapacitateRezervor and NivelPoluare == diesel.NivelPoluare;
 }
 
-double MasinaDiesel::ObtinePretPePiata() const {
-    double PretFinal = Pret;
-    if (An != 2024)
+template <class T1, class T2, class T3>
+T2 MasinaDiesel<T1, T2, T3>::ObtinePretPePiata() const {
+    T2 PretFinal = this->Pret;
+    if (this->An != 2024)
     {
         cout << "Masina nu este noua, dar pentru ca este pe diesel va suferi o penalizare mai mare" << "\n";
         if (NivelPoluare < 5)
@@ -50,7 +54,8 @@ double MasinaDiesel::ObtinePretPePiata() const {
     }
 }
 
-istream& operator>>(istream& in, MasinaDiesel& car) {
+template <class T1, class T2, class T3>
+istream& operator>>(istream& in, MasinaDiesel<T1, T2, T3>& car) {
     cout << "Marca masinii: " << endl;
     in >> car.Marca;
 
@@ -72,11 +77,11 @@ istream& operator>>(istream& in, MasinaDiesel& car) {
     cout << "Firma motorului " << "\n";
     in >> car.FirmaMotor;
 
-
     return in;
 }
 
-ostream& operator<<(ostream& out, const MasinaDiesel& car) {
+template <class T1, class T2, class T3>
+ostream& operator<<(ostream& out, const MasinaDiesel<T1, T2, T3>& car) {
     out << "Marca: " << car.Marca << endl;
     out << "Model: " << car.Model << endl;
     out << "Pret: " << car.Pret << endl;
