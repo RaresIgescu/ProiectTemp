@@ -4,40 +4,62 @@
 #include <iostream>
 #include <string>
 #include <utility>
+#include <vector>
 #include "Masina.h"
 using namespace std;
 
-Masina::Masina(string marca, string model , double pret, int an): Marca(std::move(marca)), Model(std::move(model)), Pret(pret), An(an) {}
+template <class T1, class T2, class T3>
+Masina<T1, T2, T3>::Masina(T1 marca, T1 model, T2 pret, T3 an): Marca(marca), Model(model), Pret(pret), An(an) {}
 
-Masina::Masina(string& marca, string& model, double pret): Marca(std::move(marca)), Model(std::move(model)), Pret(pret), An(2024) {}
+template <class T1, class T2, class T3>
+Masina<T1, T2, T3>::Masina(T1& marca, T1& model, T2 pret): Marca(marca), Model(model), Pret(pret), An(2024) {}
 
-Masina& Masina::operator=(const Masina& car1) = default;
+template <class T1, class T2, class T3>
+Masina<T1, T2, T3>& Masina<T1, T2, T3>::operator=(const Masina& car1) = default;
 
-Masina::Masina(const Masina& car) =default;
+template <class T1, class T2, class T3>
+Masina<T1, T2, T3>::Masina(const Masina& car) =default;
 
-Masina::~Masina () =default;
+template <class T1, class T2, class T3>
+Masina<T1, T2, T3>::~Masina () =default;
 
-int Masina::operator==(const Masina& car) const{
+template <class T1, class T2, class T3>
+int Masina<T1, T2, T3>::operator==(const Masina& car) const{
     return car.Marca == Marca and car.Model == Model and car.An == An;
 }
 
-string Masina::GetMarca() const {
+template <class T1, class T2, class T3>
+T1 Masina<T1, T2, T3>::GetMarca() const {
     return Marca;
 }
 
-string Masina::GetModel() const {
+template <class T1, class T2, class T3>
+T1 Masina<T1, T2, T3>::GetModel() const {
     return Model;
 }
 
-double Masina::GetPret() const {
+template <class T1, class T2, class T3>
+T2 Masina<T1, T2, T3>::GetPret() const {
     return Pret;
 }
 
-int Masina::GetAn() const {
+template <class T1, class T2, class T3>
+T3 Masina<T1, T2, T3>::GetAn() const {
     return An;
 }
 
-istream& operator>>(istream& in, Masina& car) {
+template <class T1, class T2, class T3>
+void Masina<T1, T2, T3>::AfiseazaDetalii() const {
+    cout << "Prezentarea masinii: " << "\n";
+    cout << "Marca: " << this->Marca << "\n";
+    cout << "Model: " << this->Model << "\n";
+    cout << "An: " << this->An << "\n";
+    cout << "Pret: " << this->Pret << "\n";
+    cout << "Dotari: " << "\n" ;
+}
+
+template <class T1, class T2, class T3>
+istream& operator>>(istream& in, Masina<T1, T2, T3>& car) {
     cout << "Marca masinii: " << endl;
     in >> car.Marca;
 
@@ -53,7 +75,8 @@ istream& operator>>(istream& in, Masina& car) {
     return in;
 }
 
-ostream& operator<<(ostream& out, const Masina& car) {
+template <class T1, class T2, class T3>
+ostream& operator<<(ostream& out, const Masina<T1, T2, T3>& car) {
     out << "Marca: " << car.Marca << endl;
     out << "Model: " << car.Model << endl;
     out << "Pret: " << car.Pret << endl;
@@ -61,7 +84,8 @@ ostream& operator<<(ostream& out, const Masina& car) {
     return out;
 }
 
-double Masina::ObtinePretPePiata() const {
+template <class T1, class T2, class T3>
+T2 Masina<T1, T2, T3>::ObtinePretPePiata() const {
     double PretFinal = Pret;
     if (An != 2024)
     {
