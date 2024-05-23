@@ -323,10 +323,10 @@ int Dealer_Auto::ContorTotal = 0;
                     cout << "La plata cu cardul putem sa vorbim despre achizita printr-o banca.\nPentru ca achizitia sa decurga mai usor, introduceti codul bancii la care aveti card" << "\n";
                     NrBanca = 0;
                     cin >> NrBanca;
-                    auto iterator = BanciPartenere.find(NrBanca);
-                    if (iterator != BanciPartenere.end()) {
+                    auto i = BanciPartenere.find(NrBanca);
+                    if (i != BanciPartenere.end()) {
                         std::cout << "Elementul asociat cheii " << NrBanca << " este: ";
-                        iterator->second.afisare();
+                        i->second.afisare();
                         cout << "\n";
                     }
                     else
@@ -334,9 +334,9 @@ int Dealer_Auto::ContorTotal = 0;
                         cout << "Cheia " << NrBanca << " nu a fost găsită în map.\n";
                     }
                     cout << "Avand in vedere ca folositi banca ";
-                    iterator->second.afisare();
-                    cout << " dupa adaugarea TVAului bancii, pretul final al masinii va fi " << iterator->second.CalculPretFinal(PretInitial) << "\n";
-                    PretFinal = iterator->second.CalculPretFinal(PretInitial);
+                    i->second.afisare();
+                    cout << " dupa adaugarea TVAului bancii, pretul final al masinii va fi " << i->second.CalculPretFinal(PretInitial) << "\n";
+                    PretFinal = i->second.CalculPretFinal(PretInitial);
                     cout << "Doriti sa platiti in rate" <<"\n";
                     cout <<"1 - Da\n2 - Nu"<<"\n";
                     cin >> InputContinuare;
@@ -348,8 +348,8 @@ int Dealer_Auto::ContorTotal = 0;
                     }
                     if (InputContinuare == 1)
                     {
-                        cout << "La banca "; iterator->second.afisare(); cout << " puteti plati in urmatoarele rate: " << "\n";
-                        RataLunara = iterator->second.GetRataLunara(PretFinal);
+                        cout << "La banca "; i->second.afisare(); cout << " puteti plati in urmatoarele rate: " << "\n";
+                        RataLunara = i->second.GetRataLunara(PretFinal);
                         cout << "In final, rata lunara pentru masina aleasa in raport cu banca partenera este de " << RataLunara << "\n";
                         cout << "Doriti sa va echipati vehiculul cu un pachet premium de dotari?" << "\n";
                         cout << "1 - Da\n2 - Nu"<<"\n";
