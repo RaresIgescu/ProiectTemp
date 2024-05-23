@@ -7,7 +7,7 @@
 #include <vector>
 #include "Banca.h"
 
-Banca::Banca(string  nume, double tva,const vector <int>& rate): Nume(std::move(nume)), TVA(tva), NumarRate(rate) {}
+Banca::Banca(string nume, double tva,const vector <int>& rate): Nume(std::move(nume)), TVA(tva), NumarRate(rate) {}
 
 string Banca::GetNume() const{
     return Nume;
@@ -22,7 +22,11 @@ double Banca::GetRataLunara(double pret) const{
     int Indice;
     for(int i : NumarRate)
         cout << ++NrRata << ". " << i << "\n";
-    cout << "Alegeti indecele numarului de rate." << "\n";
+    cout << "Alegeti indicele numarului de rate." << "\n";
     cin >> Indice;
     return double(pret/NumarRate[Indice-1]);
+}
+
+void Banca::afisare() const {
+    cout << Nume;
 }
