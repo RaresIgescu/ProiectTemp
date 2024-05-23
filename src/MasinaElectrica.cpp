@@ -2,7 +2,6 @@
 // Created by riges on 4/14/2024.
 //
 #include <iostream>
-#include <string>
 #include <utility>
 #include "MasinaElectrica.h"
 

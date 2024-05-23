@@ -2,8 +2,6 @@
 // Created by riges on 4/15/2024.
 //
 #include <iostream>
-#include <string>
-#include <utility>
 #include "MasinaDiesel.h"
 
 template <class T1, class T2, class T3>

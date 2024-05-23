@@ -7,4 +7,4 @@
 #include <utility>
 
 template<> Masina<string, double, int>::Masina(string marca, string model, double pret, int an) : Marca(std::move(marca)), Model(std::move(model)), Pret(pret), An(an) {}
-template<> MasinaElectrica<string, double, int>::MasinaElectrica(string marca, string model, double pret, int an, int autonomie, int timpinc, int procent, string baterie): Masina<string, double, int>(marca, model, pret, an), Autonomie(autonomie), TimpIncarcare(timpinc), ProcentBaterie(procent), NumeBaterie(baterie) {}
+template<> MasinaElectrica<string, double, int>::MasinaElectrica(string marca, string model, double pret, int an, int autonomie, int timpinc, int procent, string baterie): Masina<string, double, int>(std::move(marca), std::move(model), pret, an), Autonomie(autonomie), TimpIncarcare(timpinc), ProcentBaterie(procent), NumeBaterie(std::move(baterie)) {}

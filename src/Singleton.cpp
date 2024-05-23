@@ -10,8 +10,8 @@ int Singleton::iesire = 0;
 
 Singleton::Singleton(): dealer(nullptr) {}
 
-void Singleton::setDealer(Dealer_Auto *dealer) {
-    this->dealer = dealer;
+void Singleton::setDealer(Dealer_Auto *Dealer) {
+    this->dealer = Dealer;
 }
 
 Singleton* Singleton::PreiaInstanta() {
@@ -19,7 +19,7 @@ Singleton* Singleton::PreiaInstanta() {
     return instance;
 }
 
-void Singleton::AdaugareOptiune(int key, string nume, void (Dealer_Auto::*action)()) {
+void Singleton::AdaugareOptiune(int key, const string& nume, void (Dealer_Auto::*action)()) {
     Optiuni[key] = std::make_pair(nume, action);
 }
 
@@ -45,3 +45,5 @@ void Singleton::Alegere() {
     auto it = Optiuni.find(aleg);
     (dealer->*it->second.second)();
 }
+
+Singleton::~Singleton() = default;

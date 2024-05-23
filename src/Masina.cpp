@@ -2,9 +2,6 @@
 // Created by riges on 4/13/2024.
 //
 #include <iostream>
-#include <string>
-#include <utility>
-#include <vector>
 #include "Masina.h"
 using namespace std;
 
@@ -41,11 +38,6 @@ T1 Masina<T1, T2, T3>::GetModel() const {
 template <class T1, class T2, class T3>
 T2 Masina<T1, T2, T3>::GetPret() const {
     return Pret;
-}
-
-template <class T1, class T2, class T3>
-T3 Masina<T1, T2, T3>::GetAn() const {
-    return An;
 }
 
 template <class T1, class T2, class T3>

@@ -179,7 +179,6 @@ int Dealer_Auto::ContorTotal = 0;
         int InputMarca;
         int InputModel;
         int InputContinuare;
-        int IndexBanca;
         double PretInitial = 0;
         double RataLunara;
         string MarcaAleasa;
@@ -206,9 +205,9 @@ int Dealer_Auto::ContorTotal = 0;
                 cin >> InputMarca;
             }
             int count = 0;
-            for (auto iter = Flota.begin(); iter != Flota.end(); ++iter) {
+            for (auto iter : Flota) {
                 if (count == 3 * (InputMarca - 1)) {
-                    MarcaAleasa = (*iter)->GetMarca();
+                    MarcaAleasa = iter->GetMarca();
                     break;
                 }
                 ++count;
@@ -233,9 +232,9 @@ int Dealer_Auto::ContorTotal = 0;
                 cin >> InputModel;
             }
             count = 0;
-            for (auto iter = Flota.begin(); iter != Flota.end(); ++iter) {
+            for (auto iter : Flota) {
                 if (count == 3 * (InputMarca - 1) + (InputModel - 1)) {
-                    ModelAles = (*iter)->GetModel();
+                    ModelAles = iter->GetModel();
                     break;
                 }
                 ++count;
@@ -323,7 +322,6 @@ int Dealer_Auto::ContorTotal = 0;
                 {
                     cout << "La plata cu cardul putem sa vorbim despre achizita printr-o banca.\nPentru ca achizitia sa decurga mai usor, introduceti codul bancii la care aveti card" << "\n";
                     NrBanca = 0;
-                    int NrBanca;
                     cin >> NrBanca;
                     auto iterator = BanciPartenere.find(NrBanca);
                     if (iterator != BanciPartenere.end()) {
@@ -468,9 +466,9 @@ int Dealer_Auto::ContorTotal = 0;
         for (auto iter = Flota.begin(); iter != Flota.end(); advance(iter, 3)) {
             cout << "Gama masinilor de la " << (*iter)->GetMarca() << ":\n";
             int NrModel = 0;
-            for (auto iterModel = Flota.begin(); iterModel != Flota.end(); ++iterModel) {
-                if ((*iterModel)->GetMarca() == (*iter)->GetMarca())
-                        cout << ++NrModel << ". " << (*iterModel)->GetModel() << "\n";
+            for (auto iterModel : Flota) {
+                if (iterModel->GetMarca() == (*iter)->GetMarca())
+                        cout << ++NrModel << ". " << iterModel->GetModel() << "\n";
                 }
             cout << "\n";
             }
