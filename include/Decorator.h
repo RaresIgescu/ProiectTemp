@@ -12,11 +12,11 @@ class Decorator: public Masina<string, double, int> {
 private:
     Masina<string, double, int>* masina;
 public:
-    Decorator(Masina<string, double, int>* masina);
+    explicit Decorator(Masina<string, double, int>* masina);
 
     void AfiseazaDetalii() const override;
 
-    ~Decorator() {
+    ~Decorator() override {
         delete masina;
     }
 };

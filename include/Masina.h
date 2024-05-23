@@ -38,13 +38,11 @@ public:
 
     [[nodiscard]] T2 GetPret() const;
 
-    [[nodiscard]] T3 GetAn() const;
-
     [[nodiscard]] virtual T2 ObtinePretPePiata() const;
 
     [[nodiscard]] virtual T3 CreeazaMasinaElectrica() const { return 0; }
 
-    [[nodiscard]] virtual void AfiseazaDetalii() const;
+    virtual void AfiseazaDetalii() const;
 
     friend istream& operator>>(istream& in, Masina<T1, T2, T3>& car); //operator de citire supraincarcat
     friend ostream& operator<<(ostream& out, const Masina<T1, T2, T3>& car); //operator de afisare supraincarcat

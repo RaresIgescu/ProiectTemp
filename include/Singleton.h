@@ -10,12 +10,6 @@
 #include <vector>
 #include <map>
 #include "DealerAuto.h"
-
-struct Optiune {
-    std::string descriere;
-    void (*actiune)();
-};
-
 class Singleton {
 private:
     static Singleton* instance;
@@ -25,7 +19,7 @@ private:
     Singleton();
 public:
     static int iesire;
-    void AdaugareOptiune(int key, string nume, void (Dealer_Auto::*action)());
+    void AdaugareOptiune(int key, const string& nume, void (Dealer_Auto::*action)());
     static Singleton* PreiaInstanta();
     void setDealer(Dealer_Auto* dealer);
     void Afisare();
