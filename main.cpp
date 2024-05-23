@@ -25,10 +25,7 @@ int main() {
         meniu->Afisare();
         meniu->Alegere();
         if(Singleton::iesire == 1)
-        {
-            continuare = 0;
             break;
-        }
         cout << "Continuati procesul?" << "\n";
             cout << "1 - Da\n2 - Nu" << "\n";
             cin >> InputContinuare;
