@@ -277,7 +277,7 @@ int Dealer_Auto::ContorTotal = 0;
                     }
                     if (InputContinuare == 1)
                     {
-                        Masina<string, double, int>* temp;
+                        Masina<string, double, int>* temp = nullptr;
                         cout << "Super, atunci vehiculul dumneavoastra va avea urmatoarele caraacteristici: " << "\n";
                         for (const auto& elem : Flota)
                             if(elem->GetMarca() == MarcaAleasa && elem->GetModel() == ModelAles)
@@ -364,7 +364,7 @@ int Dealer_Auto::ContorTotal = 0;
                         }
                         if (InputContinuare == 1)
                         {
-                            Masina<string, double, int>* temp;
+                            Masina<string, double, int>* temp = nullptr;
                             cout << "Super, atunci vehiculul dumneavoastra va avea urmatoarele caraacteristici: " << "\n";
                             for (const auto& elem : Flota)
                                 if(elem->GetMarca() == MarcaAleasa && elem->GetModel() == ModelAles)
