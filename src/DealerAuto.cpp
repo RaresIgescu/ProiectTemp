@@ -336,8 +336,9 @@ int Dealer_Auto::ContorTotal = 0;
                     cout << "Avand in vedere ca folositi banca ";
                     if(i != BanciPartenere.end())
                         i->second.afisare();
-                    cout << " dupa adaugarea TVAului bancii, pretul final al masinii va fi " << i->second.CalculPretFinal(PretInitial) << "\n";
-                    PretFinal = i->second.CalculPretFinal(PretInitial);
+                    if(i != BanciPartenere.end())
+                        PretFinal = i->second.CalculPretFinal(PretInitial);
+                    cout << " dupa adaugarea TVAului bancii, pretul final al masinii va fi " << PretFinal << "\n";
                     cout << "Doriti sa platiti in rate" <<"\n";
                     cout <<"1 - Da\n2 - Nu"<<"\n";
                     cin >> InputContinuare;
