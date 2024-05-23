@@ -6,25 +6,30 @@
 #include <utility>
 #include "MasinaElectrica.h"
 
-MasinaElectrica::MasinaElectrica(string marca, string model, double pret, int an, int autonomie, int timpinc, int procent, string baterie) : Masina(std::move(marca), std::move(model), pret, an), Autonomie(autonomie), TimpIncarcare(timpinc), ProcentBaterie(procent), NumeBaterie(std::move(baterie)) {}
+template <class T1, class T2, class T3>
+MasinaElectrica<T1, T2, T3>::MasinaElectrica(T1 marca, T1 model, T2 pret, T3 an, T3 autonomie, T3 timpinc, T3 procent, T1 baterie) : Masina<T1, T2, T3>(marca, model, pret, an), Autonomie(autonomie), TimpIncarcare(timpinc), ProcentBaterie(procent), NumeBaterie(std::move(baterie)) {}
 
-MasinaElectrica & MasinaElectrica::operator=(const MasinaElectrica& elec) {
-    Masina::operator=(elec);
+template <class T1, class T2, class T3>
+MasinaElectrica<T1, T2, T3>& MasinaElectrica<T1, T2, T3>::operator=(const MasinaElectrica& elec) {
+    Masina<T1, T2, T3>::operator=(elec);
     this->Autonomie = elec.Autonomie;
     this->TimpIncarcare = elec.TimpIncarcare;
     this->NumeBaterie = elec.NumeBaterie;
     return *this;
 }
 
-bool MasinaElectrica::operator==(const MasinaElectrica &elec) const{
-    return Masina::operator==(elec) and Autonomie == elec.Autonomie and NumeBaterie == elec.NumeBaterie;
+template <class T1, class T2, class T3>
+bool MasinaElectrica<T1, T2, T3>::operator==(const MasinaElectrica &elec) const{
+    return Masina<T1, T2, T3>::operator==(elec) and Autonomie == elec.Autonomie and NumeBaterie == elec.NumeBaterie;
 }
 
-MasinaElectrica::~MasinaElectrica() =default;
+template <class T1, class T2, class T3>
+MasinaElectrica<T1, T2, T3>::~MasinaElectrica() =default;
 
-double MasinaElectrica::ObtinePretPePiata() const {
-    double PretFinal = Pret;
-        if (An != 2024)
+template <class T1, class T2, class T3>
+T2 MasinaElectrica<T1, T2, T3>::ObtinePretPePiata() const {
+    double PretFinal = this->Pret;
+        if (this->An != 2024)
         {
             cout << "Masina nu este noua, dar pentru ca este electrica va suferi o penalizare redusa" << "\n";
             if (ProcentBaterie > 75) {
@@ -51,16 +56,18 @@ double MasinaElectrica::ObtinePretPePiata() const {
         return 0;
     }
 
-    int MasinaElectrica::CreeazaMasinaElectrica() const {
-        if (Autonomie <= 0)
-        {
-            throw std::invalid_argument(" nu este functionala.");
-        }
-        else
-            return 1;
+template <class T1, class T2, class T3>
+T3 MasinaElectrica<T1, T2, T3>::CreeazaMasinaElectrica() const {
+    if (Autonomie <= 0)
+    {
+        throw std::invalid_argument(" nu este functionala.");
+    }
+    else
+        return 1;
 }
 
-istream& operator>>(istream& in, MasinaElectrica& car) {
+template <class T1, class T2, class T3>
+istream& operator>>(istream& in, MasinaElectrica<T1, T2, T3>& car) {
     cout << "Marca masinii: " << endl;
     in >> car.Marca;
 
@@ -88,7 +95,8 @@ istream& operator>>(istream& in, MasinaElectrica& car) {
     return in;
 }
 
-ostream& operator<<(ostream& out, const MasinaElectrica& car) {
+template <class T1, class T2, class T3>
+ostream& operator<<(ostream& out, const MasinaElectrica<T1, T2, T3>& car) {
     out << "Marca: " << car.Marca << endl;
     out << "Model: " << car.Model << endl;
     out << "Pret: " << car.Pret << endl;
