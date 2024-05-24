@@ -15,7 +15,8 @@ void Singleton::setDealer(Dealer_Auto *Dealer) {
 }
 
 Singleton* Singleton::PreiaInstanta() {
-    instance = new Singleton();
+    if(!instance)
+        instance = new Singleton();
     return instance;
 }
 

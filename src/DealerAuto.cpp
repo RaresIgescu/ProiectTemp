@@ -543,9 +543,9 @@ int Dealer_Auto::ContorTotal = 0;
     void Dealer_Auto::RTTI() {
         cout << "Fiecare obiect din Flota este de urmatorul fel: " << "\n";
         for (auto &masina : Flota) {
-            cout << "Tipul obiectului: ";
+            cout << "Tipul masinii: ";
             if(typeid(*masina).name()[0] == '6')
-                cout << "Masina" << "\n";
+                cout << "Masina Simpla" << "\n";
             else if(typeid(*masina).name()[0] == '1' && typeid(*masina).name()[1] == '5')
                 cout << "Masina Electrica" << "\n";
             else if(typeid(*masina).name()[0] == '1' && typeid(*masina).name()[1] == '2')
