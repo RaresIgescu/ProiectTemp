@@ -465,7 +465,7 @@ int Dealer_Auto::ContorTotal = 0;
 
     void Dealer_Auto::VizualizareFlota() {
         int Index;
-        for (auto iter = Flota.begin(); iter != Flota.end(); advance(iter, 3)) {
+        for (auto iter = Flota.begin(); iter != Flota.end(); iter++) {
             cout << "Gama masinilor de la " << (*iter)->GetMarca() << ":\n";
             int NrModel = 0;
             for (auto iterModel : Flota) {
