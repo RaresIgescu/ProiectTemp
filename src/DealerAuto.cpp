@@ -465,15 +465,19 @@ int Dealer_Auto::ContorTotal = 0;
 
     void Dealer_Auto::VizualizareFlota() {
         int Index;
+        string Anterior = " ";
         for (auto iter = Flota.begin(); iter != Flota.end(); iter++) {
-            cout << "Gama masinilor de la " << (*iter)->GetMarca() << ":\n";
-            int NrModel = 0;
-            for (auto iterModel : Flota) {
-                if (iterModel->GetMarca() == (*iter)->GetMarca())
+            if (Anterior != (*iter)->GetMarca()) {
+                cout << "Gama masinilor de la " << (*iter)->GetMarca() << ":\n";
+                int NrModel = 0;
+                for (auto iterModel: Flota) {
+                    if (iterModel->GetMarca() == (*iter)->GetMarca())
                         cout << ++NrModel << ". " << iterModel->GetModel() << "\n";
                 }
-            cout << "\n";
+                cout << "\n";
             }
+            Anterior = (*iter)->GetMarca();
+        }
         cout << "Doriti sa sortati rezultatele?" << "\n";
         cout << "1. DA || 2. NU" << "\n";
         cin >> Index;
