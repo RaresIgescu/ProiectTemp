@@ -487,8 +487,8 @@ int Dealer_Auto::ContorTotal = 0;
             for (const auto& elem : Vec) {
                 cout << elem->GetMarca() << " " << elem->GetModel() << "\n";
             }
-            for (int i = 0; i<Vec.size(); i++) {
-                delete Vec[i];
+            for (auto &i:Vec) {
+                delete i;
             }
         }
         else
