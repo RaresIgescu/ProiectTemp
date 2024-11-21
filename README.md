@@ -1,5 +1,5 @@
-# Igescu Rares-Andrei, Grupa 132 - Proiect 2 POO      
-Tema: Un dealer auto de vehicule care permite unui individ sa faca diferite operatii adecvate unui dealer autorizat real.   
-    
-In tastatura.txt se vor gasi testele pentru rularea codului, pentru a se observa cat mai multe dintre ramurile programelului.
+# Object Oriented Programming Project, First Year - Final Grade: 10.
 
+This project tries to resemble a vehicle dealer application, with different operations such as buying a car with options to pay in full or use a bank loan, selling one, viewing all the cars at the dealers disposal and so on.
+
+Feel free to fork or develop further.
